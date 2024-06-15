@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap');
+
 :root {
     --clr-primary: #0056b3;
     --clr-secondary: #ffffff;
@@ -10,16 +12,11 @@
     --clr-input-outline: rgba(0, 86, 179, 0.5);
     --clr-box-shadow: rgba(0, 86, 179, 0.1);
     --ff-primary: 'Poppins', sans-serif;
-    --ff-secondary: 'Roboto', sans-serif;
     --fs-primary: 1rem;
-}
-
-body {
-    font-family: var(--ff-primary);
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    --fs-secondary: 1.125rem;
+    --fs-large: 2rem;
+    --fs-xlarge: 2.5rem;
+    --fs-small: 0.875rem;
 }
 
 * {

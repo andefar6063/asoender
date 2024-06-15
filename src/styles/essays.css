@@ -1,15 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap');
-
-body {
-    font-family: 'Roboto', sans-serif;
-}
-
 .essay-page {
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 20px;
-    background-color: #f8f9fa;
+    background-color: var(--clr-bg);
     min-height: 100vh;
 }
 
@@ -19,8 +13,8 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    background-color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    background-color: var(--clr-bg-card);
+    box-shadow: 0 4px 12px var(--clr-box-shadow);
     border-radius: 10px;
     margin-bottom: 20px;
     padding: 40px;
@@ -38,14 +32,14 @@ body {
 }
 
 .essay-page-hero-content h1 {
-    font-size: 2.5rem;
+    font-size: var(--fs-xlarge);
     font-weight: bold;
     color: #333;
     margin-bottom: 10px;
 }
 
 .essay-page-hero-content p {
-    font-size: 1.125rem;
+    font-size: var(--fs-secondary);
     line-height: 1.6;
     color: #666;
     margin-bottom: 0;
@@ -60,21 +54,21 @@ body {
 }
 
 .essay-page-item {
-    background-color: #ffffff;
+    background-color: var(--clr-bg-card);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px var(--clr-box-shadow);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .essay-page-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 16px var(--clr-box-shadow);
 }
 
 .essay-page-item h2 a {
     font-size: 1.5rem;
-    color: #0056b3;
+    color: var(--clr-primary);
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -84,7 +78,7 @@ body {
 }
 
 .essay-page-item h3 {
-    font-size: 1rem;
+    font-size: var(--fs-primary);
     color: #666;
     margin-top: 10px;
 }
