@@ -1,0 +1,29 @@
+:root {
+    --clr-primary: #0056b3;
+    --clr-secondary: #ffffff;
+    --clr-tertiary: #cce0ff;
+    --clr-quaternary: rgba(0, 86, 179, 0.2);
+    --clr-placeholder-text: rgba(0, 86, 179, 0.7);
+    --clr-bg: #f8f9fa;
+    --clr-bg-card: #ffffff;
+    --clr-bg-header: #0056b3;
+    --clr-input-outline: rgba(0, 86, 179, 0.5);
+    --clr-box-shadow: rgba(0, 86, 179, 0.1);
+    --ff-primary: 'Poppins', sans-serif;
+    --ff-secondary: 'Roboto', sans-serif;
+    --fs-primary: 1rem;
+}
+
+body {
+    font-family: var(--ff-primary);
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
