@@ -75,7 +75,7 @@ function EssayDetail() {
     }
 
     return (
-        <div className="min-h-screen p-5 flex items-center justify-center">
+        <div className="min-h-screen px-5 pb-3 flex items-center justify-center">
             <div className="max-w-2xl mx-auto p-5 bg-white rounded-xl shadow-lg text-pretty">
                 <h1 className="text-3xl mb-5">{essay.heading}</h1>
                 <p className="text-lg text-gray-700 mb-4">{essay.text}</p>

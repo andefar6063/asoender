@@ -46,7 +46,7 @@ function PreviousWork() {
 
 function Hjem() {
     return (
-        <div className="w-full max-w-5xl px-5 py-10 mx-auto flex flex-col gap-10 items-center">
+        <div className="w-full max-w-5xl px-5 pb-3 mx-auto flex flex-col gap-10 items-center">
             <section className="w-full min-h-[calc(100vh-120px)] flex items-center justify-center relative bg-bgCard shadow-lg rounded-xl p-10 text-center overflow-hidden bg-fixed bg-cover bg-center">
                 <div className="relative z-10 max-w-xl flex flex-col items-center text-center justify-center">
                     <h1 className="text-6xl font-bold text-gray-800 mb-5">Velkommen</h1>

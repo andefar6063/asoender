@@ -27,7 +27,7 @@ function App() {
 
 function NavBar() {
   return (
-    <nav className="flex justify-center p-5 rounded-lg backdrop-blur bg-bg">
+    <nav className="flex justify-center p-5">
       <ul className="flex flex-col gap-4 md:flex-row md:gap-2">
         <li className="list-none">
           <Link className="block px-5 py-2 text-center text-sm font-medium uppercase transition-colors rounded-md hover:bg-blue-100" to="/">Hjem</Link>

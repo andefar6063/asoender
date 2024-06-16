@@ -72,7 +72,7 @@ function Essays() {
     }
 
     return (
-        <div className="flex flex-col gap-5 p-5 min-h-screen">
+        <div className="w-full max-w-5xl px-5 pb-3 mx-auto flex flex-col gap-10 items-center">
             <section className="h-52 flex items-center justify-center relative bg-bgCard shadow-lg rounded-xl mb-5 p-10 text-center">
                 <div className="max-w-xl flex flex-col items-center text-center justify-center">
                     <h1 className="text-5xl font-bold text-gray-800 mb-5">Kommentarer</h1>
