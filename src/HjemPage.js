@@ -1,10 +1,7 @@
-// src/HjemPage.js
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import './styles/hjem.css';
-
-// Import profile picture
 import profilePicture from './images/headshot.png';
+import './styles/index.css';
 
 function PreviousWork() {
     const messages = [
@@ -23,23 +20,22 @@ function PreviousWork() {
     }
 
     return (
-        <div className="steps">
-            <div className="numbers">
+        <div className="mt-5 text-center">
+            <div className="flex justify-center gap-2 mb-5">
                 {messages.map((_, index) => (
-                    <div key={index} className={step >= index + 1 ? "active" : ""}>{index + 1}</div>
+                    <div key={index} className={`w-8 h-8 flex items-center justify-center rounded-full ${step >= index + 1 ? 'bg-primary text-secondary' : 'bg-tertiary text-gray-700'}`}>{index + 1}</div>
                 ))}
             </div>
-            <p className="message">Projekt {step}: {messages[step - 1].name}</p>
-            <p className="description">{messages[step - 1].text}</p>
-
-            <div className="buttons">
-                <button className="button prev" onClick={() => prev()} disabled={step === 1}>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+            <p className="text-xl mb-5">Projekt {step}: {messages[step - 1].name}</p>
+            <p className="text-lg text-gray-600 mb-5">{messages[step - 1].text}</p>
+            <div className="flex justify-center gap-4">
+                <button className="p-2 rounded-full bg-primary text-secondary transition-transform transform hover:translate-y-[-3px] hover:bg-blue-800" onClick={prev} disabled={step === 1}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
                     </svg>
                 </button>
-                <button className="button next" onClick={() => next()} disabled={step === messages.length}>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                <button className="p-2 rounded-full bg-primary text-secondary transition-transform transform hover:translate-y-[-3px] hover:bg-blue-800" onClick={next} disabled={step === messages.length}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0-3.75 3.75M21 12H3" />
                     </svg>
                 </button>
@@ -50,33 +46,30 @@ function PreviousWork() {
 
 function Hjem() {
     return (
-        <div className="home-page-container">
-            <section className="home-page-container-hero">
-                <div className="home-page-container-hero-content">
-                    <h1>Velkommen</h1>
-                    <p>Dette er en personlig hjemmeside, hvor jeg deler min baggrund og mine tidligere projekter. Du vil også finde en samling af essays om emner, der fascinerer mig</p>
-                    <Link to="/kontakt" className="home-page-container-cta-button">Kontakt mig</Link>
-                    <div className="home-page-container-scroll-indicator"></div>
+        <div className="w-full max-w-5xl px-5 py-10 mx-auto flex flex-col gap-10 items-center">
+            <section className="w-full min-h-[calc(100vh-120px)] flex items-center justify-center relative bg-bgCard shadow-lg rounded-xl p-10 text-center overflow-hidden bg-fixed bg-cover bg-center">
+                <div className="relative z-10 max-w-xl flex flex-col items-center text-center justify-center">
+                    <h1 className="text-6xl font-bold text-gray-800 mb-5">Velkommen</h1>
+                    <p className="text-2xl text-gray-600 mb-5">Dette er en personlig hjemmeside, hvor jeg deler min baggrund og mine tidligere projekter. Du vil også finde en samling af essays om emner, der fascinerer mig</p>
+                    <Link to="/kontakt" className="inline-block px-5 py-2 mt-5 text-lg text-secondary bg-primary rounded-md transition-transform transform hover:bg-blue-800 hover:translate-y-[-3px]">Kontakt mig</Link>
+                </div>
+            </section>
+            <section className="w-full max-w-2xl p-10 bg-bgCard shadow-lg rounded-xl text-center">
+                <h2 className="text-3xl mb-5">Om mig</h2>
+                <div className="flex flex-col items-center mb-5">
+                    <img src={profilePicture} alt="Profile" className="w-36 h-36 rounded-md mb-5 object-cover" />
+                </div>
+                <div className="text-left">
+                    <p className="text-lg text-gray-600 mb-4">Hej, jeg er en ung gut med en passion for programmering, skriveri, iværksætteri og selvudvikling. I øjeblikket studerer jeg på gymnasie, men i min fritid fordyber jeg mig i mine interesser.</p>
                 </div>
             </section>
 
-            <section className="home-page-container-about">
-                <h2>Om mig</h2>
-                <img src={profilePicture} alt="Profile" className="profile-picture" />
-                <p>
-                    Hej, jeg er en ung gut med en passion for programmering, skriveri, iværksætteri og selvudvikling. I øjeblikket studerer jeg på gymnasie, men i min fritid fordyber jeg mig i mine interesser. Jeg har arbejdet på flere mindre projekter, heriblandt denne hjemmeside, hvor jeg har udviklet en bred vifte af færdigheder.
-                </p>
+            <section className="w-full max-w-2xl p-10 bg-bgCard shadow-lg rounded-xl text-center">
+                <h2 className="text-3xl mb-5">Specifikt om mine færdigheder</h2>
+                <p className="text-lg text-gray-600 mb-4">Jeg har færdigheder inden for både backend- og frontend-udvikling og arbejdet med Python, JavaScript (inklusiv Node.js og React.js) samt Go-Language.</p>
             </section>
-
-            <section className="home-page-container-more-info">
-                <h2>Specifikt om mine færdigheder</h2>
-                <p>
-                    Jeg har færdigheder inden for både backend- og frontend-udvikling og har erfaring med programmeringssprog som Python, JavaScript (inklusive Node.js og React.js) samt Go.
-                </p>
-            </section>
-
-            <section className='home-page-container-previous-work'>
-                <h2>Tidligere projekter</h2>
+            <section className="w-full max-w-2xl p-10 bg-bgCard shadow-lg rounded-xl text-center">
+                <h2 className="text-3xl mb-5">Tidligere projekter</h2>
                 <PreviousWork />
             </section>
         </div>

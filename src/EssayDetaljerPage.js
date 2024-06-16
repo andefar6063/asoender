@@ -1,8 +1,6 @@
-// src/EssayDetaljerPage.js
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import supabase from './supabaseClient';
-import './styles/essaydetaljer.css';
 
 function EssayDetail() {
     const { id } = useParams();
@@ -31,10 +29,10 @@ function EssayDetail() {
     }
 
     return (
-        <div className='essay-detail-container'>
-            <div className="essay-detail">
-                <h1>{essay.heading}</h1>
-                <p>{essay.text}</p>
+        <div className="min-h-screen p-5">
+            <div className="max-w-2xl mx-auto p-5 bg-bgCard rounded-xl shadow-lg">
+                <h1 className="text-5xl text-primary mb-5">{essay.heading}</h1>
+                <p className="text-lg text-gray-600">{essay.text}</p>
             </div>
         </div>
     );

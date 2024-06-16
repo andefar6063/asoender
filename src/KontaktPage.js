@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
-import './styles/kontakt.css';
 
 function Kontakt() {
     const form = useRef();
@@ -25,41 +24,46 @@ function Kontakt() {
     };
 
     return (
-        <div className='kontakt-page-container'>
-            <div className="kontakt-page">
-                <h1>Kontakt</h1>
+        <div className="flex flex-col items-center justify-center h-screen">
+            <div className="bg-bgCard p-10 rounded-xl shadow-lg max-w-lg w-full mx-5">
+                <h1 className="text-5xl font-bold text-gray-800 mb-5">Kontakt</h1>
                 {sent ? (
-                    <p>Tak for din besked! Vi vender tilbage hurtigst muligt.</p>
+                    <p className="text-lg text-gray-600 text-center">Tak for din besked! Vi vender tilbage hurtigst muligt.</p>
                 ) : (
-                    <form ref={form} onSubmit={sendEmail} className="kontakt-page-form">
-                        <div className="kontakt-page-form-group">
-                            <label htmlFor="name">Navn:</label>
+                    <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4">
+                        <div className="flex flex-col gap-2">
+                            <label htmlFor="name" className="text-lg text-gray-600">Navn:</label>
                             <input
                                 type="text"
                                 name="user_name"
                                 id="name"
                                 required
+                                className="p-3 border-2 border-quaternary rounded-md text-base font-primary focus:border-inputOutline focus:outline-none"
                             />
                         </div>
-                        <div className="kontakt-page-form-group">
-                            <label htmlFor="email">Email:</label>
+                        <div className="flex flex-col gap-2">
+                            <label htmlFor="email" className="text-lg text-gray-600">Email:</label>
                             <input
                                 type="email"
                                 name="user_email"
                                 id="email"
                                 required
+                                className="p-3 border-2 border-quaternary rounded-md text-base font-primary focus:border-inputOutline focus:outline-none"
                             />
                         </div>
-                        <div className="kontakt-page-form-group">
-                            <label htmlFor="message">Besked:</label>
+                        <div className="flex flex-col gap-2">
+                            <label htmlFor="message" className="text-lg text-gray-600">Besked:</label>
                             <textarea
                                 name="message"
                                 id="message"
                                 required
+                                className="p-3 border-2 border-quaternary rounded-md text-base font-primary focus:border-inputOutline focus:outline-none resize-none h-28"
                             ></textarea>
                         </div>
-                        <button type="submit">Send</button>
-                        {error && <p>{error}</p>}
+                        <button type="submit" className="p-3 bg-primary text-secondary rounded-md text-lg transition-colors hover:bg-blue-800">
+                            Send
+                        </button>
+                        {error && <p className="text-red-500">{error}</p>}
                     </form>
                 )}
             </div>
