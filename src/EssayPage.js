@@ -72,7 +72,7 @@ function Essays() {
     }
 
     return (
-        <div className="w-full max-w-5xl px-5 pb-3 mx-auto flex flex-col gap-10 items-center">
+        <div className="w-full max-w-5xl px-5 py-3 mx-auto flex flex-col gap-10 items-center">
             <section className="h-52 flex items-center justify-center relative bg-bgCard shadow-lg rounded-xl mb-5 p-10 text-center">
                 <div className="max-w-xl flex flex-col items-center text-center justify-center">
                     <h1 className="text-5xl font-bold text-gray-800 mb-5">Kommentarer</h1>
@@ -82,9 +82,9 @@ function Essays() {
 
             <section className="flex flex-col gap-5 max-w-2xl mx-auto">
                 {essays.map((essay) => (
-                    <div key={essay.id} className="bg-bgCard p-5 rounded-xl shadow-lg transition-transform transform hover:translate-y-[-3px]">
-                        <h2 className="text-3xl mb-5">
-                            <Link to={`/kommentar/${essay.id}`} className="transition-colors hover:text-blue-800">{essay.heading}</Link>
+                    <div key={essay.id} className="bg-bgCard p-5 rounded-xl shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105">
+                        <h2 className="text-3xl font-bold text-gray-800">
+                            <Link to={`/kommentar/${essay.id}`}>{essay.heading}</Link>
                         </h2>
                         <h3 className="text-lg text-gray-600 mb-4">{essay.text.substring(0, 100)}...</h3>
                     </div>

@@ -17,7 +17,7 @@ function App() {
           <Route path="/kommentar/:id" element={<EssayDetail />} />
           <Route path="/kontakt" element={<Kontakt />} />
         </Routes>
-        <footer className="text-center text-sm font-medium uppercase">
+        <footer className="text-center text-sm font-medium uppercase bg-gradient-to-r from-blue-500 to-blue-700 text-white p-5">
           <p>© 2024 Anton Sønderskov Kristensen. Alle rettigheder forbeholdes. Telefon: 20410319</p>
         </footer>
       </div>
@@ -27,20 +27,23 @@ function App() {
 
 function NavBar() {
   return (
-    <nav className="flex justify-center p-5">
-      <ul className="flex flex-col gap-4 md:flex-row md:gap-2">
-        <li className="list-none">
-          <Link className="block px-5 py-2 text-center text-sm font-medium uppercase transition-colors rounded-md hover:bg-blue-100" to="/">Hjem</Link>
-        </li>
-        <li className="list-none">
-          <Link className="block px-5 py-2 text-center text-sm font-medium uppercase transition-colors rounded-md hover:bg-blue-100" to="/kommentarer">Kommentarer</Link>
-        </li>
-        <li className="list-none">
-          <Link className="block px-5 py-2 text-center text-sm font-medium uppercase transition-colors rounded-md hover:bg-blue-100" to="/kontakt">Kontakt</Link>
-        </li>
-      </ul>
+    <nav className="bg-gradient-to-r from-blue-500 to-blue-700 text-white shadow-md">
+      <div className="container mx-auto p-5 flex justify-between items-center">
+        <ul className="flex flex-col md:flex-row gap-4 md:gap-8">
+          <li className="list-none">
+            <Link className="block px-5 py-2 text-sm font-medium uppercase transition-transform transform rounded-md hover:bg-blue-600 hover:scale-105" to="/">Hjem</Link>
+          </li>
+          <li className="list-none">
+            <Link className="block px-5 py-2 text-sm font-medium uppercase transition-transform transform rounded-md hover:bg-blue-600 hover:scale-105" to="/kommentarer">Kommentarer</Link>
+          </li>
+          <li className="list-none">
+            <Link className="block px-5 py-2 text-sm font-medium uppercase transition-transform transform rounded-md hover:bg-blue-600 hover:scale-105" to="/kontakt">Kontakt</Link>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 }
+
 
 export default App;

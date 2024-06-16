@@ -34,7 +34,7 @@ function Kontakt() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen">
+        <div className="w-full max-w-5xl px-5 py-3 mx-auto flex flex-col gap-10 items-center h-screen">
             <div className="bg-bgCard p-10 rounded-xl shadow-lg max-w-lg w-full mx-5">
                 <h1 className="text-5xl font-bold text-gray-800 mb-5">Kontakt</h1>
                 {sent ? (
@@ -48,7 +48,7 @@ function Kontakt() {
                                 name="user_name"
                                 id="name"
                                 required
-                                className="p-3 border-2 border-quaternary rounded-md text-base font-primary focus:border-inputOutline focus:outline-none"
+                                className="p-3 border-2 border-quaternary rounded-md text-base font-primary transition-transform duration-300 ease-in-out transform hover:scale-105 focus:border-inputOutline focus:outline-none"
                             />
                         </div>
                         <div className="flex flex-col gap-2">
@@ -58,7 +58,7 @@ function Kontakt() {
                                 name="user_email"
                                 id="email"
                                 required
-                                className="p-3 border-2 border-quaternary rounded-md text-base font-primary focus:border-inputOutline focus:outline-none"
+                                className="p-3 border-2 border-quaternary rounded-md text-base font-primary transition-transform duration-300 ease-in-out transform hover:scale-105 focus:border-inputOutline focus:outline-none"
                             />
                         </div>
                         <div className="flex flex-col gap-2">
@@ -67,12 +67,12 @@ function Kontakt() {
                                 name="message"
                                 id="message"
                                 required
-                                className="p-3 border-2 border-quaternary rounded-md text-base font-primary focus:border-inputOutline focus:outline-none resize-none h-28"
+                                className="p-3 border-2 border-quaternary rounded-md text-base font-primary transition-transform duration-300 ease-in-out transform hover:scale-105 focus:border-inputOutline focus:outline-none resize-none h-28"
                             ></textarea>
                         </div>
                         <button
                             type="submit"
-                            className="p-3 bg-primary text-secondary rounded-md text-lg transition-colors hover:bg-blue-800"
+                            className="p-3 bg-blue-500 text-white rounded-md text-lg transition-transform duration-300 ease-in-out transform hover:bg-blue-600 hover:scale-110"
                             disabled={loading}
                         >
                             {loading ? 'Sender...' : 'Send'}

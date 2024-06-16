@@ -75,8 +75,8 @@ function EssayDetail() {
     }
 
     return (
-        <div className="min-h-screen px-5 pb-3 flex items-center justify-center">
-            <div className="max-w-2xl mx-auto p-5 bg-white rounded-xl shadow-lg text-pretty">
+        <div className="min-h-screen px-5 py-3 flex items-center justify-center">
+            <div className="max-w-2xl mx-auto p-5 bg-bgCard rounded-xl shadow-lg text-primary transition-transform duration-300 ease-in-out transform hover:scale-105">
                 <h1 className="text-3xl mb-5">{essay.heading}</h1>
                 <p className="text-lg text-gray-700 mb-4">{essay.text}</p>
             </div>
