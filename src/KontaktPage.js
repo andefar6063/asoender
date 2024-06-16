@@ -4,21 +4,31 @@ import emailjs from 'emailjs-com';
 function Kontakt() {
     const form = useRef();
     const [sent, setSent] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
     const sendEmail = (e) => {
         e.preventDefault();
+        setLoading(true);
+        setError(null);
 
         emailjs
-            .sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAILJS_USER_ID)
+            .sendForm(
+                process.env.REACT_APP_EMAILJS_SERVICE_ID,
+                process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+                form.current,
+                process.env.REACT_APP_EMAILJS_USER_ID
+            )
             .then(
                 () => {
                     console.log('SUCCESS!');
                     setSent(true);
+                    setLoading(false);
                 },
                 (error) => {
                     console.log('FAILED...', error.text);
                     setError('Kunne ikke sende besked. Prøv igen senere.');
+                    setLoading(false);
                 }
             );
     };
@@ -60,8 +70,12 @@ function Kontakt() {
                                 className="p-3 border-2 border-quaternary rounded-md text-base font-primary focus:border-inputOutline focus:outline-none resize-none h-28"
                             ></textarea>
                         </div>
-                        <button type="submit" className="p-3 bg-primary text-secondary rounded-md text-lg transition-colors hover:bg-blue-800">
-                            Send
+                        <button
+                            type="submit"
+                            className="p-3 bg-primary text-secondary rounded-md text-lg transition-colors hover:bg-blue-800"
+                            disabled={loading}
+                        >
+                            {loading ? 'Sender...' : 'Send'}
                         </button>
                         {error && <p className="text-red-500">{error}</p>}
                     </form>

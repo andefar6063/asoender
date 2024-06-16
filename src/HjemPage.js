@@ -59,9 +59,7 @@ function Hjem() {
                 <div className="flex flex-col items-center mb-5">
                     <img src={profilePicture} alt="Profile" className="w-36 h-36 rounded-md mb-5 object-cover" />
                 </div>
-                <div className="text-left">
-                    <p className="text-lg text-gray-600 mb-4">Hej, jeg er en ung gut med en passion for programmering, skriveri, iværksætteri og selvudvikling. I øjeblikket studerer jeg på gymnasie, men i min fritid fordyber jeg mig i mine interesser.</p>
-                </div>
+                <p className="text-lg text-gray-600 mb-4">Hej, jeg er en ung gut med en passion for programmering, skriveri, iværksætteri og selvudvikling. I øjeblikket studerer jeg på gymnasie, men i min fritid fordyber jeg mig i mine interesser.</p>
             </section>
 
             <section className="w-full max-w-2xl p-10 bg-bgCard shadow-lg rounded-xl text-center">
