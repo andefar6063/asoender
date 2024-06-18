@@ -1,9 +1,22 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 import MainBtn from "../components/mainBtn";
-import profilePicture from "../images/headshot.png";
+import { fetchBillede } from "../api/billedeFetch";
 
 export default function Root() {
+  const {
+    isLoading,
+    data: billede,
+    error,
+  } = useQuery({
+    queryKey: ["billede"],
+    queryFn: fetchBillede,
+  });
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+
   const sectionClass =
     "min-h-screen flex items-center flex-col justify-center space-y-5 py-10 border-b-2 border-blue";
 
@@ -22,7 +35,7 @@ export default function Root() {
 
       <section className={`${sectionClass} min-h-[60vh]`}>
         <img
-          src={profilePicture}
+          src={billede}
           alt="Profile"
           className="h-36 w-36 rounded-full object-cover"
         />
