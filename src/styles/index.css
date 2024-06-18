@@ -1,31 +1,5 @@
-/* index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-:root {
-    --clr-primary: #0056b3;
-    --clr-secondary: #ffffff;
-    --clr-tertiary: #cce0ff;
-    --clr-quaternary: rgba(0, 86, 179, 0.2);
-    --clr-placeholder-text: rgba(0, 86, 179, 0.7);
-    --clr-bg: #f8f9fa;
-    --clr-bg-card: #ffffff;
-    --clr-bg-header: #0056b3;
-    --clr-input-outline: rgba(0, 86, 179, 0.5);
-    --clr-box-shadow: rgba(0, 86, 179, 0.1);
-    --ff-primary: 'Poppins', sans-serif;
-    --fs-primary: 1rem;
-    --fs-secondary: 1.125rem;
-    --fs-large: 2rem;
-    --fs-xlarge: 2.5rem;
-    --fs-small: 0.875rem;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
